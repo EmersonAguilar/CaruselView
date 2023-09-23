@@ -4,11 +4,13 @@
              x:Class="MauiCollectionControls.Pages.CarouselViewDemo"
              Title="CarouselViewDemo">
 
-    <VerticalStackLayout>
+    <Grid RowDefinitions="*,*">
+    <VerticalStackLayout VerticalOptions="Center">
         <CarouselView x:Name="carouselView" IndicatorView="indicatorview">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <VerticalStackLayout BackgroundColor="#E0E4FF" Padding="10">
+                        <Image WidthRequest="150" HeightRequest="150" Source="{Binding Imagen}"/>
                         <Label FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Text="{Binding Title}"/>
                         <Label FontSize="Small"  HorizontalTextAlignment="Center" Text="{Binding Description}"/>
                     </VerticalStackLayout>
@@ -17,5 +19,5 @@
         </CarouselView>
         <IndicatorView x:Name="indicatorview" Margin="5" IndicatorColor="Red" SelectedIndicatorColor="Orange"  HorizontalOptions="Center"/>
     </VerticalStackLayout>
-    
+    </Grid>
 </ContentPage>
